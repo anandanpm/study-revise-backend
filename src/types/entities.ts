@@ -28,8 +28,8 @@ export interface BaseQuestion {
   id: string
   type: QuestionType
   prompt: string
-  pageRef?: number
-  explanation?: string
+  pageRef?: number|undefined
+  explanation?: string|undefined
 }
 
 export interface McqQuestion extends BaseQuestion {
@@ -50,7 +50,7 @@ export interface LaqQuestion extends BaseQuestion {
 
 export type Question = McqQuestion | SaqQuestion | LaqQuestion
 
-export interface Quiz {
+export interface Quiz { 
   _id: string
   ownerId: string
   pdfId: string
