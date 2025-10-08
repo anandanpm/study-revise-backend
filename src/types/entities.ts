@@ -1,9 +1,14 @@
-export interface User {
+import { Document } from "mongodb"
+
+
+export interface User extends Document{
   _id: string
   email: string
   passwordHash: string
   createdAt: Date
 }
+
+
 
 export interface PdfDoc {
   _id: string

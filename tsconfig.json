@@ -13,7 +13,8 @@
     "esModuleInterop": true,
     "useUnknownInCatchVariables": true,
     "skipLibCheck": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+     "lib": ["ES2021"] 
   },
   "include": ["src"]
 }
