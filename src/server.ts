@@ -1,4 +1,4 @@
-import express, { type Express } from "express"
+import express, { type Express, type Request, type Response, type NextFunction } from "express"
 import cors from "cors"
 import cookieParser from "cookie-parser"
 import path from "path"
@@ -10,9 +10,11 @@ import { quizRouter } from "./routes/quiz.route"
 export function createServer(env: Env): Express {
   const app = express()
 
+  
+
   app.use(
     cors({
-      origin: env.CORS_ORIGIN,
+      origin: process.env.CORS_ORIGIN,
       credentials: true,
     })
   )
@@ -21,8 +23,17 @@ export function createServer(env: Env): Express {
   app.use(express.json({ limit: "10mb" }))
   app.use(express.urlencoded({ extended: true }))
 
+  // Middleware to log incoming requests
+  app.use((req: Request, _res: Response, next: NextFunction) => {
+    console.log(`[Request] ${req.method} ${req.url}`)
+    if (req.method === "POST" || req.method === "PUT") {
+      console.log("[Body]", req.body)
+    }
+    next()
+  })
+
   // Static serve uploaded PDFs
-  app.use("/uploads", express.static(path.join(__dirname, "..", "uploads")))
+    app.use("/uploads", express.static(path.join(process.cwd(), "backend", "uploads")))
 
   app.get("/health", (_req, res) => res.json({ ok: true }))
 

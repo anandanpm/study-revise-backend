@@ -11,6 +11,7 @@ const EnvSchema = zod_1.z.object({
     JWT_SECRET: zod_1.z.string().min(24, "JWT_SECRET too short"),
     CORS_ORIGIN: zod_1.z.string().min(1),
     AI_MODEL: zod_1.z.string().default("openai/gpt-5-mini").optional(),
+    OPENAI_API_KEY: zod_1.z.string().min(1, "OpenAI API key is required"), // <-- added
 });
 function loadEnv() {
     return EnvSchema.parse(process.env);

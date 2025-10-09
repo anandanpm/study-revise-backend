@@ -10,6 +10,7 @@ const jwt_1 = require("../lib/jwt");
 function registerController(_env) {
     return async (req, res) => {
         const { email, password } = req.body;
+        console.log(email, password, 'the email and password is comming');
         if (!email || !password) {
             res.status(400).json({ error: "Email and password required" });
             return;

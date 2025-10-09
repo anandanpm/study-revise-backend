@@ -8,6 +8,7 @@ import type { AuthedRequest } from "../middleware/auth"
 export function registerController(_env: Env) {
   return async (req: Request, res: Response): Promise<void> => {
     const { email, password } = req.body as { email?: string; password?: string }
+     console.log(email,password,'the email and password is comming');
     if (!email || !password) {
       res.status(400).json({ error: "Email and password required" })
       return

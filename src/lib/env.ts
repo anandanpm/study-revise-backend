@@ -9,6 +9,7 @@ const EnvSchema = z.object({
   JWT_SECRET: z.string().min(24, "JWT_SECRET too short"),
   CORS_ORIGIN: z.string().min(1),
   AI_MODEL: z.string().default("openai/gpt-5-mini").optional(),
+  OPENAI_API_KEY: z.string().min(1, "OpenAI API key is required"), // <-- added
 })
 
 export type Env = z.infer<typeof EnvSchema>

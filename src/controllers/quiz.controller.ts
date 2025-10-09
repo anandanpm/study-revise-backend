@@ -40,7 +40,7 @@ export function generateQuizController(env: Env) {
       numSAQ,
       numLAQ,
     })
-    const parsed = parseQuizJson(aiJson)
+    const parsed = parseQuizJson(aiJson.text)
     const quiz = await createQuiz({
       ownerId: req.user.id,
       pdfId: pdf._id,

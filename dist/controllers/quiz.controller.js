@@ -31,7 +31,7 @@ function generateQuizController(env) {
             numSAQ,
             numLAQ,
         });
-        const parsed = (0, quiz_service_1.parseQuizJson)(aiJson);
+        const parsed = (0, quiz_service_1.parseQuizJson)(aiJson.text);
         const quiz = await (0, quiz_repository_1.createQuiz)({
             ownerId: req.user.id,
             pdfId: pdf._id,
