@@ -1,6 +1,6 @@
 import { ObjectId } from "mongodb"
-import { collection } from "../lib/db.js"
-import type { PdfDoc } from "../types/entities.js"
+import { collection } from "../lib/db"
+import type { PdfDoc } from "../types/entities"
 
 const pdfsCol = () => collection<PdfDoc>("pdfs")
 

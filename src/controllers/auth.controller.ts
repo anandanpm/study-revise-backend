@@ -1,9 +1,9 @@
 import type { Request, Response } from "express"
-import type { Env } from "../lib/env.js"
-import { findUserByEmail, createUser } from "../repositories/user.repository.js"
-import { hashPassword, verifyPassword } from "../lib/hash.js"
-import { signJwt } from "../lib/jwt.js"
-import type { AuthedRequest } from "../middleware/auth.js"
+import type { Env } from "../lib/env"
+import { findUserByEmail, createUser } from "../repositories/user.repository"
+import { hashPassword, verifyPassword } from "../lib/hash"
+import { signJwt } from "../lib/jwt"
+import type { AuthedRequest } from "../middleware/auth"
 
 export function registerController(_env: Env) {
   return async (req: Request, res: Response): Promise<void> => {

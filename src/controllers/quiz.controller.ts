@@ -1,10 +1,10 @@
 import type { Response } from "express"
-import type { AuthedRequest } from "../middleware/auth.js"
-import type { Env } from "../lib/env.js"
-import { getPdfById } from "../repositories/pdf.repository.js"
-import { createQuiz, getQuizById, listAttempts, progress, saveAttempt } from "../repositories/quiz.repository.js"
-import { generateQuizWithAI } from "../services/ai.service.js"
-import { parseQuizJson, scoreAttempt } from "../services/quiz.service.js"
+import type { AuthedRequest } from "../middleware/auth"
+import type { Env } from "../lib/env"
+import { getPdfById } from "../repositories/pdf.repository"
+import { createQuiz, getQuizById, listAttempts, progress, saveAttempt } from "../repositories/quiz.repository"
+import { generateQuizWithAI } from "../services/ai.service"
+import { parseQuizJson, scoreAttempt } from "../services/quiz.service"
 
 export function generateQuizController(env: Env) {
   return async (req: AuthedRequest, res: Response): Promise<void> => {

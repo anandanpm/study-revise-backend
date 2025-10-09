@@ -1,8 +1,8 @@
 import type { Request, Response } from "express"
 import path from "node:path"
-import { parsePdfFile } from "../services/pdf.service.js"
-import { addPdf, listPdfs, getPdfById, seedPdf } from "../repositories/pdf.repository.js"
-import type { AuthedRequest } from "../middleware/auth.js"
+import { parsePdfFile } from "../services/pdf.service"
+import { addPdf, listPdfs, getPdfById, seedPdf } from "../repositories/pdf.repository"
+import type { AuthedRequest } from "../middleware/auth"
 import type { Env } from "../lib/env.js"
 
 export function seedNcertController(env: Env) {

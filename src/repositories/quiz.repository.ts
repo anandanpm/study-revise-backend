@@ -1,6 +1,6 @@
 import { ObjectId } from "mongodb"
-import { collection } from "../lib/db.js"
-import type { Attempt, ProgressSnapshot, Quiz } from "../types/entities.js"
+import { collection } from "../lib/db"
+import type { Attempt, ProgressSnapshot, Quiz } from "../types/entities"
 
 const quizzesCol = () => collection<Quiz>("quizzes")
 const attemptsCol = () => collection<Attempt>("attempts")

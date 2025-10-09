@@ -1,6 +1,6 @@
 import { ObjectId } from "mongodb"
-import { collection } from "../lib/db.js"
-import type { User } from "../types/entities.js"
+import { collection } from "../lib/db"
+import type { User } from "../types/entities"
 
 const usersCol = () => collection<User>("users")
 
