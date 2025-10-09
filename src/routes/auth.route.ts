@@ -11,3 +11,4 @@ export function authRouter(env: Env): Router {
   r.get("/me", requireAuth(env), meController(env))
   return r
 }
+
